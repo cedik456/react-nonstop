@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply text-black bg-gray-100;
+  font-family: "Poppins";
+}
+h1 {
+  @apply text-2xl font-bold text-blue-500;
+}
+h2 {
+  @apply my-4 text-xl font-bold;
+}
+h3 {
+  @apply my-4 text-lg font-bold;
+}
+ul {
+  @apply my-10;
+}
+p {
+  @apply my-2;
+}
+
+/* header */
+header {
+  @apply bg-white;
+
+  nav {
+    @apply flex items-center max-w-screen-lg gap-5 px-12 py-4 mx-auto;
+  }
+  h1 {
+    @apply mr-auto;
+  }
+}
+
+/* form elements */
+form {
+  @apply max-w-screen-sm;
+}
+input,
+select,
+textarea {
+  @apply block w-full p-2 mt-2 mb-4;
+}
+
+/* custom classes */
+.wrapper {
+  @apply flex h-screen w-screen justify-center items-center flex-col gap-5;
+}
+
+.container {
+  @apply max-w-screen-lg px-12 py-8 mx-auto;
+}
+.card {
+  @apply flex items-center justify-between px-3 py-3 my-2 bg-white border border-gray-200 rounded;
+}
+.highlight {
+  @apply border-l-4 border-l-blue-500;
+}
+.btn {
+  @apply px-3 py-2 bg-gray-200 rounded hover:bg-gray-500 hover:text-white;
+}

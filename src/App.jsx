@@ -1,9 +1,9 @@
-import Accordian from "./components/Accordian";
+import Accordion from "./components/Accordion";
 
 function App() {
   return (
     <>
-      <Accordian />
+      <Accordion />
     </>
   );
 }
