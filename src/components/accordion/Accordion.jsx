@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import dummyData from "./data.js";
 
 const Accordion = () => {
-  const [selectedData, setSelectedData] = useState("");
+  const [selectedData, setSelectedData] = useState(false);
   const [enableMultipleSelection, setEnableMultipleSelection] = useState(false); // for enabling the selection mode
   const [multiple, setMultiple] = useState([]); // for storing multiple selected items
 
