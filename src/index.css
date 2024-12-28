@@ -55,7 +55,7 @@ textarea {
   @apply max-w-screen-lg px-12 py-8 mx-auto;
 }
 .card {
-  @apply flex items-center justify-between px-3 py-3 my-2 bg-white border border-gray-200 rounded;
+  @apply w-[500px] h-[300px] p-4 m-4 bg-white border border-gray-200 rounded;
 }
 .highlight {
   @apply border-l-4 border-l-blue-500;
