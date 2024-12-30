@@ -36,10 +36,6 @@ const ImageSlider = ({ page }) => {
     setCurrentSlide(currentSlide === images.length - 1 ? 0 : currentSlide + 1);
   }
 
-  function handleCircle(index) {
-    setCurrentSlide(index);
-  }
-
   useEffect(() => {
     fetchImages();
   }, [page]);
@@ -90,7 +86,7 @@ const ImageSlider = ({ page }) => {
         {images && images.length > 0 ? (
           images.map((_, index) => (
             <button
-              onClick={() => handleCircle(index)}
+              onClick={() => setCurrentSlide(index)}
               key={index}
               className={`w-4 h-4 border-none outline-none rounded-xl ${
                 currentSlide === index ? "bg-gray-500" : "bg-gray-300"
