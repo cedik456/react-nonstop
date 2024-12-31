@@ -4,6 +4,7 @@ const LoadMore = () => {
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([]);
   const [count, setCount] = useState(0);
+  const [disableButton, setDisableButton] = useState(false);
 
   async function fetchProducts() {
     try {
@@ -20,7 +21,7 @@ const LoadMore = () => {
         setLoading(false);
       }
 
-      console.log(result);
+      console.log(result.products);
     } catch (error) {
       console.log(error);
       setLoading(false);
@@ -31,13 +32,19 @@ const LoadMore = () => {
     fetchProducts();
   }, [count]);
 
+  useEffect(() => {
+    if (products && products.length === 30) {
+      setDisableButton(true);
+    }
+  });
+
   if (loading) {
     return <div className="wrapper">Loading Data... Please wait</div>;
   }
 
   return (
     <div className="wrapper ">
-      <div className="grid grid-cols-5">
+      <div className="grid grid-cols-6">
         {products && products.length
           ? products.map((product) => (
               <div className="m-3 shadow-md" key={product.id}>
@@ -50,8 +57,15 @@ const LoadMore = () => {
             ))
           : null}
       </div>
-      <div className="btn">
-        <button onClick={() => setCount(count + 1)}>Load More Products</button>
+      <div>
+        <button
+          className={`btn ${disableButton ? "hidden" : "block"}`}
+          disabled={disableButton}
+          onClick={() => setCount(count + 1)}
+        >
+          Load More Products
+        </button>
+        {disableButton ? <p>You have reached the limit</p> : null}
       </div>
     </div>
   );
