@@ -51,9 +51,6 @@ textarea {
   @apply flex h-screen w-screen justify-center items-center flex-col gap-5;
 }
 
-.container {
-  @apply max-w-screen-lg px-12 py-8 mx-auto;
-}
 .card {
   @apply w-[500px] h-[300px] p-4 m-4 bg-white border border-gray-200 rounded;
 }
