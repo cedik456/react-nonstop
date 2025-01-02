@@ -10,7 +10,6 @@ const MenuItems = ({ item }) => {
       ...displayCurrentChildren,
       [getCurrentLabel]: !displayCurrentChildren[getCurrentLabel],
     });
-    console.log(displayCurrentChildren);
   }
   return (
     <li>
